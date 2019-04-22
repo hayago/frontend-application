@@ -43,6 +43,7 @@ jobs:
       - run:
           name: Add python3.7
           command: |
+            cd /tmp
             curl -O https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz
             tar xvfz Python-3.7.1.tgz
             cd Python-3.7.1/
