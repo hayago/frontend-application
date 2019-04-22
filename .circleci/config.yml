@@ -41,6 +41,17 @@ jobs:
           path: ~/repo/coverage/lcov-report/
 
       - run:
+          name: Add python3.7
+          command: |
+            curl -O https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz
+            tar xvfz Python-3.7.1.tgz
+            cd Python-3.7.1/
+            ./configure --prefix=/usr/local/python371 --with-ensurepip
+            make
+            sudo make install
+            sudo ln -fs /usr/local/python371/bin/python3.7 /usr/bin/python
+
+      - run:
           name: deploy
           command: |
             sudo apt-get -y -qq install awscli
