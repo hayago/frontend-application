@@ -71,7 +71,7 @@ functions:
       - functionErrors
     vpc:
       securityGroupIds:
-        - "Fn::ImportValue": ${env:ALIS_APP_ID}-FrontendSecurityGroupId
+        - "Fn::ImportValue": staging-FrontendSecurityGroupId
       subnetIds:
-        - "Fn::ImportValue": ${env:ALIS_APP_ID}-PrivateLambdaMultiAZ1aSubNetId
-        - "Fn::ImportValue": ${env:ALIS_APP_ID}-PrivateLambdaMultiAZ1cSubNetId
+        - "Fn::ImportValue": staging-PrivateLambdaMultiAZ1aSubNetId
+        - "Fn::ImportValue": staging-PrivateLambdaMultiAZ1cSubNetId
